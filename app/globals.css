@@ -57,3 +57,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide the scrollbar in all major browsers */
+::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar for webkit-based browsers (Chrome, Safari) */
+}
+
+::-webkit-scrollbar-track {
+  display: none; /* Hide the scrollbar track for webkit-based browsers */
+}
+
+::-webkit-scrollbar-thumb {
+  display: none; /* Hide the scrollbar thumb for webkit-based browsers */
+}
+
+/* For Firefox */
+scrollbar-width: none;
+
+/* For Internet Explorer and Microsoft Edge */
+-ms-overflow-style: none;
