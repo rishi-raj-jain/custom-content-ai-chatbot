@@ -1,13 +1,12 @@
 import { z } from 'zod'
-import train from '@/lib/train'
 import * as dotenv from 'dotenv'
 import requestIp from 'request-ip'
 import { runMiddleware } from '@/lib/cors'
-import { ratelimit, redis } from '@/lib/redis'
 import { PromptTemplate } from 'langchain/prompts'
 import { RetrievalQAChain } from 'langchain/chains'
 import { loadVectorStore } from '@/lib/vectorStore'
 import { ChatOpenAI } from 'langchain/chat_models/openai'
+import { qstashClient, ratelimit, redis } from '@/lib/redis'
 import { UpstashRedisCache } from 'langchain/cache/upstash_redis'
 import { OutputFixingParser, StructuredOutputParser } from 'langchain/output_parsers'
 
@@ -23,19 +22,8 @@ export default async function (req, res) {
     // If the headers contain an `admin-key` header
     if (req.headers['admin-key'] === process.env.ADMIN_KEY) {
       // If `urls` is not in body, return with `Bad Request`
-      if (!req.body.urls) return res.status(400).send('Invalid Key.')
-      await train(req.body.urls)
-      // Once saved, clear all the responses in Upstash
-      let allKeys = await redis.keys('*')
-      if (allKeys) {
-        allKeys = allKeys.filter((i) => !i.includes('@upstash/ratelimit:'))
-        const p = redis.pipeline()
-        allKeys.forEach((i) => {
-          p.del(i)
-        })
-        await p.exec()
-        console.log('Cleaned cached responses in Upstash.')
-      }
+      if (!req.body.urls) return res.status(400).send('No urls to train on.')
+      await qstashClient.publishJSON({ url: 'https://custom-content-ai-chatbot.fly.dev/api/train', delay: 10, body: { urls: req.body.urls } })
       return res.status(200).end()
     }
     // If `input` is not in body, return with `Bad Request`
