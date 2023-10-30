@@ -1,0 +1,41 @@
+{
+  "name": "custom-content-ai-chatbot",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "fmt": "prettier --write '**/*' --ignore-unknown"
+  },
+  "dependencies": {
+    "@upstash/ratelimit": "^0.4.4",
+    "@upstash/redis": "^1.24.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "faiss-node": "^0.5.1",
+    "langchain": "^0.0.175",
+    "next": "^14.0.0",
+    "openai": "^4.14.2",
+    "postcss": "^8.4.27",
+    "prettier": "^3.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.7"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.10",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.14",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "dotenv": "^16.0.3",
+    "react-syntax-highlighter": "^15.5.0",
+    "remark-gfm": "^3.0.1",
+    "remark-math": "^5.1.1",
+    "request-ip": "^3.3.0",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "^3.3.3",
+    "tailwindcss-animate": "^1.0.6",
+    "zod": "^3.21.4"
+  }
+}
