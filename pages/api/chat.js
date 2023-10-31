@@ -23,13 +23,8 @@ export default async function (req, res) {
     if (req.headers['admin-key'] === process.env.ADMIN_KEY) {
       // If `urls` is not in body, return with `Bad Request`
       if (!req.body.urls) return res.status(400).send('No urls to train on.')
-      const t = await qstashClient.publishJSON({
-        delay: 10,
-        body: { urls: req.body.urls },
-        headers: { 'admin-key': process.env.ADMIN_KEY },
-        url: 'https://custom-content-ai-chatbot.fly.dev/api/train',
-      })
-      console.log(t)
+      // Hit QStash API to train on this set of URLs after 10 seconds from now
+      await qstashClient.publishJSON({ delay: 10, body: { urls: req.body.urls }, url: 'https://custom-content-ai-chatbot.fly.dev/api/train' })
       return res.status(200).end()
     }
     // If `input` is not in body, return with `Bad Request`
