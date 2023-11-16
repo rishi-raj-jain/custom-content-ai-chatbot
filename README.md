@@ -1,22 +1,15 @@
-<p align="center">
-  <a href="https://upstash.com/blog/ai-chatbot-nextjs">
-    <img alt="Custom Content AI Chatbot built with LangChain, Upstash and Next.js" src="https://upstash.com/blog/ai-chatbot-nextjs/opengraph-image">
-    <h1 align="center">Custom Content AI Chatbot built with LangChain, Upstash and Next.js</h1>
-  </a>
-</p>
+<a href="https://upstash.com/blog/ai-chatbot-nextjs">
+<img alt="Custom Content AI Chatbot built with LangChain, Upstash and Next.js" src="https://upstash.com/blog/ai-chatbot-nextjs/opengraph-image">
+</a>
 
-<p align="center">
-  <a href="#introduction"><strong>Introduction</strong></a> ·
-  <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
-  <a href="#author"><strong>Author</strong></a>
-</p>
+# Custom Content AI Chatbot built with LangChain, Upstash and Next.js
+    
+<a href="#introduction"><strong>Introduction</strong></a> · <a href="#tech-stack"><strong>Tech Stack</strong></a> · <a href="#author"><strong>Author</strong></a>
 <br/>
 
 ## Introduction
 
-An open source template of Custom Content AI Chatbot built with LangChain, Upstash and Next.js, deployed to Fly.io.
-
-Built with [Next.js](https://nextjs.org), [Fly.io](https://fly.io), [Upstash](https://upstash.com), [LangChain](https://js.langchain.com/) and [TailwindCSS](https://tailwindcss.com).
+An open source template of Custom Content AI Chatbot built with [Next.js](https://nextjs.org), [Fly.io](https://fly.io), [Upstash](https://upstash.com), [LangChain](https://js.langchain.com/) and [TailwindCSS](https://tailwindcss.com).
 
 ## Tech Stack
 
